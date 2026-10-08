@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --card-bg: #ffffff;
+    --border-subtle: #e2e8f0;
+    --border-highlight: #cbd5e1;
+    --accent-green-bar: #14532d;
+    --accent-emerald: #16a34a;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+  }
+
+  body {
+    background-color: #fafafa;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, .font-serif {
+    font-family: 'Instrument Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+/* Floating Heatmap Widget Cards */
+.floating-heatmap-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.floating-heatmap-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* GitHub Heatmap Light-Mode Emerald Tiers */
+.heatmap-level-0 {
+  background-color: #ebedf0;
+  border: 1px solid rgba(27, 31, 35, 0.04);
+}
+
+.heatmap-level-1 {
+  background-color: #9be9a8;
+  border: 1px solid rgba(27, 31, 35, 0.04);
+}
+
+.heatmap-level-2 {
+  background-color: #40c463;
+  border: 1px solid rgba(27, 31, 35, 0.04);
+}
+
+.heatmap-level-3 {
+  background-color: #30a14e;
+  border: 1px solid rgba(27, 31, 35, 0.04);
+}
+
+.heatmap-level-4 {
+  background-color: #216e39;
+  border: 1px solid rgba(27, 31, 35, 0.04);
+}
+
+/* Clean UI Utilities */
+.githire-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.githire-pill-button {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.githire-pill-button:hover {
+  background: #1e293b;
+  transform: scale(1.02);
+}
+
+/* Custom Sleek Scrollbars */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
