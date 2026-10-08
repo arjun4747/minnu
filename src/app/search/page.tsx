@@ -28,10 +28,16 @@ function SearchContent() {
   const [totalCount, setTotalCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [expandedDevId, setExpandedDevId] = useState<number | null>(null);
+
+  const handleToggleExpand = (id: number) => {
+    setExpandedDevId((prev) => (prev === id ? null : id));
+  };
 
   const fetchDevelopers = useCallback(async (searchFilters: SearchFilterParams) => {
     setIsLoading(true);
     setError(null);
+    setExpandedDevId(null);
 
     const params = new URLSearchParams();
     if (searchFilters.username) params.set('username', searchFilters.username);
@@ -235,9 +241,14 @@ function SearchContent() {
 
       {/* Developer Cards Grid */}
       {!isLoading && !error && developers.length > 0 && (
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 items-start">
           {developers.map((dev) => (
-            <DeveloperCard key={dev.profile.id} data={dev} />
+            <DeveloperCard
+              key={dev.profile.id}
+              data={dev}
+              isExpanded={expandedDevId === dev.profile.id}
+              onToggleExpand={() => handleToggleExpand(dev.profile.id)}
+            />
           ))}
         </div>
       )}
